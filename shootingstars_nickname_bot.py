@@ -14,7 +14,7 @@ from discord import app_commands
 # 설정
 # =========================
 
-BOT_TOKEN = "MTUxMTQxMzUyOTY2MjU5MTA4OQ.G19C6Q.iO86qsoA_mDz8oTzJ0zOro3zb6umqP5nPCk3V4"
+BOT_TOKEN = "토큰 입력"
 
 ROLE_NAME = "슈팅 스타즈 클랜 특전 : 닉네임 Ss 적용"
 TAG_TEXTS = ["Ss_", "SS_"]
