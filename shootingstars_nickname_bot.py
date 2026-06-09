@@ -14,7 +14,7 @@ from discord import app_commands
 # 설정
 # =========================
 
-BOT_TOKEN = "토큰 입력"
+BOT_TOKEN = "봇 토큰 입력"
 
 ROLE_NAME = "슈팅 스타즈 클랜 특전 : 닉네임 Ss 적용"
 TAG_TEXTS = ["Ss_", "SS_"]
@@ -22,11 +22,11 @@ TAG_TEXTS = ["Ss_", "SS_"]
 LOG_CHANNEL_ID = 1511415970210648266
 
 ADMIN_ROLE_NAMES = [
-    "🥺집에 가고싶은 공무원🥺",
-    "😭노예나 다름없는 장관😭",
-    "😕일 하기 싫어하는 총리😕",
-    "👑데친 숙주나물 국왕👑",
-    "💁무엇을  도와드릴까요?💁"
+        "🥺집에 가고싶은 공무원🥺",
+        "😭노예나 다름없는 장관😭",
+        "😕일 하기 싫어하는 총리😕",
+        "👑데친 숙주나물 국왕👑",
+        "💁무엇을  도와드릴까요?💁"
 ]
 
 LOG_TITLE = "[🩷먹가 작고 귀여운 슈팅 스타즈🩷] 닉네임 로그"
@@ -109,6 +109,10 @@ async def sync_member(member: discord.Member):
 async def on_ready():
     await bot.tree.sync()
     log.info(f"로그인 완료: {bot.user}")
+
+    # 상태 메시지 설정
+    game = discord.Game("닉변 확인중입니다!")
+    await bot.change_presence(status=discord.Status.online, activity=game)
 
     for guild in bot.guilds:
         for member in guild.members:
